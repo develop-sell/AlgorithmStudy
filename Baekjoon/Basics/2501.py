@@ -5,6 +5,7 @@
 import math
 
 N, index = map(int, input().split())
+hel: int = 1
 cnt = 0
 for i in range(1, (N // 2) + 1):
     if (N % i == 0):
