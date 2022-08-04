@@ -5,18 +5,18 @@
 count = int(input())
 
 def sol(n):
-  if n == 1:
-    return 1
-  elif n == 2:
-    return 2
-  elif n == 3:
-    return 4
-  else:
-    return sol(n-1) + sol(n-2) + sol(n-3)
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 4
+    else:
+        return sol(n-1) + sol(n-2) + sol(n-3)
 
 for i in range(count):
-  n = int(input())
-  print(sol(n))
+    n = int(input())
+    print(sol(n))
 
 # 리뷰
 # 모든 예시를 제대로 못 잡은 점이 컸다. 점화식인 것은 알았지만 규칙을 못 찾은 점. 
@@ -34,16 +34,16 @@ for i in range(count):
     list.append(int(input()))
 
 for i in range(count):
-  n = list[i]
-  if n == 1:
-    print(1)
-  elif n == 2:
-    print(2)
-  elif n == 4:
-    print(3)
-  else:
-    dp = [1,2,4]
-    dp = dp + [1] * (n - 2)
-    for j in range(2, n+1):
-      dp[j] = dp[j-1] + dp[j-2] + dp[j-3]
-    print(dp[n-1])
+    n = list[i]
+    if n == 1:
+        print(1)
+    elif n == 2:
+        print(2)
+    elif n == 4:
+        print(3)
+    else:
+        dp = [1,2,4]
+        dp = dp + [1] * (n - 2)
+        for j in range(2, n+1):
+            dp[j] = dp[j-1] + dp[j-2] + dp[j-3]
+        print(dp[n-1])
