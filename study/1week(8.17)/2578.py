@@ -73,14 +73,11 @@ print(count)
 
 # 한번에 4가 되는 예외 케이스
 
-## 박세일 그 전 코드임
-# 우상향
-# j = column - (4 - row)
-# if j == 0: 
+# i, j = row + (4 - row), column - (4 - row)
+# if i == 4 and j == 0:
 
-# 우하향
-# j = column + (4 - row)
-# if j == 4:
+# i, j = row + (4 - row), column + (4 - row)
+# if i == 4 and j == 4:
 
 # - 단, 대각선은 대각선 위치에 존재할 때만 확인.
 # - 대각선 위치는 2가지 case
