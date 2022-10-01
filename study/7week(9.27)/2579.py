@@ -28,6 +28,25 @@ for i in range(2, n+1):
     before = now
 print(dp[n])
 
+# dp는 점화식을 짜는 방식이 더 좋은 것. 
+# if문으로 계속 구분하면 예외가 더 생기게 된다.
+# 윤현
+n = int(input())
+st = [0] * 300
+d = [0]*300
+for i in range(n):
+    st[i]= int(input()) 
+
+d[0] = st[0]
+d[1] = st[0] + st[1]
+d[2] = max(st[0]+st[2], st[1]+st[2])
+
+for j in range(3,n):
+    d[j] = max(d[j-2]+st[j], d[j-3]+st[j-1]+st[j])
+
+            
+print(d[n-1])
+
 
 # 반례 1
 # 3
