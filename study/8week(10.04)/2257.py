@@ -70,3 +70,35 @@ print(cal(0))
 
 # cal(word)
 
+
+
+## 준서 코드
+# 스택을 활용한 코드
+import sys
+
+molecule = list(map(str,sys.stdin.readline().strip()))
+molecular_weight = [ ]
+
+for i in molecule:
+    if i == '(' :
+        molecular_weight.append(i)
+    elif i == ')':
+        s = 0
+        while True :
+            v = molecular_weight.pop()
+            if v == '(':
+                break
+            s += v
+        molecular_weight.append(s)
+    
+    elif i == 'H':
+        molecular_weight.append(1)
+    elif i == 'C':
+        molecular_weight.append(12)
+    elif i == 'O':
+        molecular_weight.append(16)
+    
+    else : #숫자
+        molecular_weight[-1] *= int(i)
+
+print(sum(molecular_weight))
