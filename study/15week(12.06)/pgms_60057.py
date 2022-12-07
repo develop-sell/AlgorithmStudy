@@ -1,7 +1,6 @@
 # 프로그래머스: 문자열 압축 
 # 4:49- 시간 오래 걸림.
 
-
 '''
 1,2,3, ... 이 순으로? 
 
@@ -17,7 +16,7 @@ s/2 까지 진행.
 맨 처음부터 나눠져야한다는 점이 이해하기 어려웠다.
 
 token화하는 것을 처음 배웠다. 
-wrap 사용할 것, 
+wrap 사용할 것. (혹은 slice 활용.) 
 '''
 
 s = 'aabbaccc'
@@ -28,6 +27,7 @@ s = "xababcdcdababcdcd"
 s = "aaaaaaaaaabbbbbbbbbb"
 s = '1'
 
+## 2번째 풀이
 
 from textwrap import wrap
 import re
@@ -66,7 +66,8 @@ else:
         
 
 
-# 첫번째 풀이
+## 1번째 풀이
+# 맨 앞부터 분리 안해도 되도록 하는 방법
 '''
 s = 'aabbaccc'
 s = "ababcdcdababcdcd"
